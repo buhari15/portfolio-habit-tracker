@@ -28,7 +28,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure--omu=^ob7-nu-a!nzt-a-kmn82w(p!0+#domaa(xo)x=#r@4ga'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
+
 ENVIRONMENT = None
 if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
