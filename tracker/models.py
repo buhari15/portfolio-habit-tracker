@@ -55,7 +55,7 @@ class HabitAnalytics(models.Model):
 
     habit = models.ForeignKey('HabitTracker', on_delete=models.CASCADE)
     habit_done = models.IntegerField(_("Done"), choices=HABIT_CHOICES, default=HABIT_NOT_DONE, blank=True, null=True)
-    when_done = models.DateTimeField(blank=True,  null=True, auto_now=True, auto_now_add=False)
+    when_done = models.DateTimeField(blank=True,  null=True, auto_now=False, auto_now_add=False)
     done_user = models.ForeignKey(settings.AUTH_USER_MODEL,
                                   on_delete=models.CASCADE, related_name='done_user')
 
@@ -75,6 +75,3 @@ class HabitAnalytics(models.Model):
 
 
 
-from django.db import models
-
-# Create your models here.
