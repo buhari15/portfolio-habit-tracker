@@ -1,0 +1,77 @@
+
+{% extends 'habittracker/base.html'%}
+{% load habittracker_tags %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Habit Tracker | Home </title>
+   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <meta name="description" content="" />
+      <meta name="keywords" content="" />
+       <meta content="" property="og:description" />
+       <meta http-equiv="x-ua-compatible" content="ie=edge">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!--CSS-->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+   <link href="{% static 'users/css/style.css'%}" rel="stylesheet">
+   <link href="{% static 'habittracker/css/Dashboard.css'%}" rel="stylesheet">
+
+   <!--Bootstrap-->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.js" integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+  <script src="{% static 'habittracker/js/dashboard.js' %}"></script>
+  <script src="https://use.fontawesome.com/ad24f1df5e.js"></script>
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/js/tempusdominus-bootstrap-4.min.js" integrity="sha512-k6/Bkb8Fxf/c1Tkyl39yJwcOZ1P4cRrJu77p83zJjN2Z55prbFHxPs9vN7q3l3+tSMGPDdoH51AEU8Vgo1cgAA==" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.39.0/css/tempusdominus-bootstrap-4.min.css" integrity="sha512-3JRrEUwaCkFUBLK1N8HehwQgu8e23jTH4np5NHOmQOobuC4ROQxFwFgBLTnhcnQRMs84muMh0PnnwXlPq5MGjg==" crossorigin="anonymous" />
+
+</head>
+
+{% block content %}
+<body class="main-body">
+
+ <div class="container">
+
+       <div class="card add-habit-card mx-auto">
+          <div class="card-body ">
+            <h4>Name of Habit: {{habit_detail_checked.habit}}</h4>
+              <h4>Created on: {{habit_detail_checked.when_done}}</h4>
+
+              <hr>
+
+
+        </div>
+
+        </div>
+
+<!--        <div class="card add-habit-card mx-auto">-->
+<!--          <div class="card-body ">-->
+<!--            <h5 class="text-center">Habit checkoffs</h5>-->
+<!--              {% for c in check_habit %}-->
+
+<!--                <div class="card-daily">-->
+<!--                  <h2><a href="{% url 'detail_habit' c.pk%}">{{c.habit}}</a></h2>-->
+<!--              </div>-->
+<!--                {% endfor %}-->
+<!--          </div>-->
+
+<!--        </div>-->
+ </div>
+{% endblock %}
+
+</body>
+</html>

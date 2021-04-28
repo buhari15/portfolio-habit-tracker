@@ -1,0 +1,185 @@
+<!--
+=========================================================
+* Soft UI Dashboard - v1.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard
+* Copyright 2021 Creative Tim (https://www.creative-tim.com)
+* Licensed under MIT (https://github.com/creativetimofficial/soft-ui-dashboard/blob/master/LICENSE.md)
+
+* Coded by Creative Tim
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+{% load habittracker_tags %}
+{% load crispy_forms_tags %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <title>
+    Habit Tracker | Home
+  </title>
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <script src="https://use.fontawesome.com/ad24f1df5e.js"></script>
+
+
+  <!-- CSS Files -->
+   <link href="{% static 'users/css/habit-style.css'%}" rel="stylesheet">
+   <link href="{% static 'users/css/dashboard.css'%}" rel="stylesheet">
+  <link href="{% static 'users/css/soft-ui-dashboard.css'%}" rel="stylesheet">
+</head>
+
+{% block content %}
+<body class="g-sidenav-show  bg-white">
+  <div class="container position-sticky z-index-sticky top-0">
+    <div class="row">
+      <div class="col-12">
+        <!-- Navbar -->
+         {% if request.user.is_authenticated %}
+         <nav class="navbar navbar-expand-lg  blur blur-rounded top-0  z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="{% url 'index_page' %}">
+              Habit Trackers
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto">
+
+
+                <li class="nav-item">
+
+                      <a href="{% url 'profile' %}" class="nav-link text-body font-weight-bold px-0">
+
+                      {{request.user.first_name |title}}, {{request.user.last_name|title}}
+                      </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'logout' %}">
+                    <i class="fa fa-sign-out opacity-6 text-dark me-1"></i>
+                    Logout
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+        {% else %}
+          <nav class="navbar navbar-expand-lg  blur blur-rounded top-0  z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+          <div class="container-fluid">
+            <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="{% url 'index_page' %}">
+              Habit Trackers
+            </a>
+            <button class="navbar-toggler shadow-none ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon mt-2">
+                <span class="navbar-toggler-bar bar1"></span>
+                <span class="navbar-toggler-bar bar2"></span>
+                <span class="navbar-toggler-bar bar3"></span>
+              </span>
+            </button>
+            <div class="collapse navbar-collapse" id="navigation">
+              <ul class="navbar-nav mx-auto">
+
+
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'register' %}">
+                    <i class="fa fa-user-circle opacity-6 text-dark me-1"></i>
+                    Sign Up
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link me-2" href="{% url 'login' %}">
+                    <i class="fa fa-key opacity-6 text-dark me-1"></i>
+                    Sign In
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </nav>
+        <!-- End Navbar -->
+
+        {% endif %}
+
+
+      </div>
+    </div>
+  </div>
+  <section>
+    <div class="page-header section-height-75">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
+            <div class="card card-plain mt-8">
+              <div class="card-header pb-0 text-left bg-transparent">
+                <h3 class="font-weight-bolder text-info text-gradient">Welcome to Habit Tracker</h3>
+
+              </div>
+              <div class="card-body">
+
+              </div>
+
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
+              <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" style="background-image:url('../assets/img/curved-images/curved6.jpg')"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer pt-3">
+        <div class="container position-absolute p-4 bottom-0">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-0">
+              <div class="copyright text-center text-sm text-muted text-lg-left">
+                © <script>
+                  document.write(new Date().getFullYear())
+                </script>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </footer>
+
+
+ <script src="{% static 'users/js/soft-ui-dashboard.min.js' %}"></script>
+  <script src="{% static 'users/js/habit-chart.js' %}"></script>
+<script src="{% static 'users/js/smooth-scrollbar.min.js' %}"></script>
+<script src="{% static 'users/js/soft-ui-dashboard.min' %}"></script>
+  <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.1"></script>
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
+  </script>
+  {% endblock %}
+</body>
+
+</html>
