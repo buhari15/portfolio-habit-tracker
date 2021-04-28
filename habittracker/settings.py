@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.conf import settings, ENVIRONMENT_VARIABLE
 
 
 
@@ -28,6 +29,7 @@ SECRET_KEY = 'django-insecure--omu=^ob7-nu-a!nzt-a-kmn82w(p!0+#domaa(xo)x=#r@4ga
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
+ENVIRONMENT = None
 if ENVIRONMENT == 'production':
     SECURE_BROWSER_XSS_FILTER = True
     X_FRAME_OPTIONS = 'DENY'
